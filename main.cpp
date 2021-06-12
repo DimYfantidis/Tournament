@@ -10,6 +10,24 @@ const char *ORDINAL_SUFFIX[] = {
         "st", "nd", "rd", "th"
 };
 
+void clearScreen() {
+    #ifdef _WIN32
+        system("CLS");
+    #elif __linux__
+        system("clear");
+    #endif
+}
+
+bool inputFail(istream &input) {
+    if (input.fail()) {
+        input.clear();
+        while (input.get() != '\n');
+        clearScreen();
+        return true;
+    }
+    return false;
+}
+
 void printMatchups(const int group_number) {
     std::mt19937_64 generator(time(nullptr) + 2);
     std::uniform_int_distribution<int> distribution(1, group_number);
@@ -72,7 +90,8 @@ int *createGroups(const int num_of_players) {
 
 char *readFromKeyboard() {
     auto *read = new char[1000];
-    cin.getline(read, 1000);
+    cin.get(read, 1000);
+    while (cin.get() != '\n');
 
     auto *result = new char[strlen(read) + 1];
     strcpy(result, read);
@@ -93,10 +112,12 @@ char **createBoard(int N) {
 int main() {
     int num_of_players;
 
-    cout << "Input number of players: ";
-    cin >> num_of_players;
+    do {
+        cout << "Input number of players: ";
+        cin >> num_of_players;
+    } while (inputFail(cin));
 
-    while (getchar() != '\n' && getchar() != EOF);
+    while (cin.get() != '\n');
 
     if (num_of_players <= 0 || num_of_players % 2) {
         int code;
@@ -122,7 +143,7 @@ int main() {
 
 
     cout << "Press Enter to exit ..." << endl;
-    while (getchar() != '\n');
+    while (cin.get() != '\n');
 
     return 0;
 }
