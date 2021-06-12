@@ -14,18 +14,19 @@ void printMatchups(const int group_number) {
     std::mt19937_64 generator(time(nullptr) + 2);
     std::uniform_int_distribution<int> distribution(1, group_number);
     int i = 0;
-    int k;
 
+    int k;
     auto *matchups = new int[group_number];
-    int group_pairs = group_number / 2;
 
     while(i < group_number) {
         k = distribution(generator);
-        if (find(matchups, matchups + i, k) == matchups + i) {
+        if (find(&matchups[0], &matchups[i], k) == &matchups[i]) {
             matchups[i++] = k;
         }
     }
     int g1, g2;
+    int group_pairs = group_number / 2;
+
     cout << "MATCHUPS: " << endl;
     for (i = 0; i < group_pairs; ++i) {
         g1 = matchups[2 * i];
@@ -62,7 +63,7 @@ int *createGroups(const int num_of_players) {
 
     while(i < num_of_players) {
         k = distribution(generator);
-        if (find(pairs, pairs + i, k) == pairs + i) {
+        if (find(&pairs[0], &pairs[i], k) == &pairs[i]) {
             pairs[i++] = k;
         }
     }
@@ -71,8 +72,7 @@ int *createGroups(const int num_of_players) {
 
 char *readFromKeyboard() {
     auto *read = new char[1000];
-    fgets(read, 1000, stdin);
-    read[strcspn(read,"\n")] = '\0';
+    cin.getline(read, 1000);
 
     auto *result = new char[strlen(read) + 1];
     strcpy(result, read);
@@ -113,16 +113,11 @@ int main() {
         exit (code);
     }
 
-    cout << "Enter player names: " << endl;
+    cout << endl << "Enter player names: " << endl;
     auto **player_board = createBoard(num_of_players);
-
-    cout << endl << "Creating " << num_of_players / 2 << " random teams of two ..." << endl;
     auto *player_pairs  = createGroups(num_of_players);
 
-    cout << "Groups created:" << endl;
     printGroups(num_of_players / 2, player_board, player_pairs);
-
-    cout << "Creating Matchups ...\n" << endl;
     printMatchups(num_of_players / 2);
 
 
