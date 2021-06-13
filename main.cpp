@@ -15,6 +15,8 @@ void clearScreen() {
         system("CLS");
     #elif __linux__
         system("clear");
+    #elif 	macintosh || Macintosh || __APPLE__ && __MACH__
+        system("clear");
     #endif
 }
 
