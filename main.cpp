@@ -89,9 +89,13 @@ int *createGroups(const int num_of_players) {
 }
 
 char *readFromKeyboard() {
-    auto *read = new char[1000];
-    cin.get(read, 1000);
-    while (cin.get() != '\n');
+    auto *read = new char[1000000];
+    size_t stop;
+    do {
+        fgets(read, 1000000, stdin);
+        stop = strcspn(read, "\n");
+        read[(stop < 100 ? stop : 100)] = '\0';
+    } while (*read == '\0');
 
     auto *result = new char[strlen(read) + 1];
     strcpy(result, read);
