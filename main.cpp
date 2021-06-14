@@ -1,34 +1,19 @@
 #include <iostream>
+#include <iomanip>
 #include <cstring>
 #include <random>
 #include <ctime>
 #include <algorithm>
+#include "auxFunctions.h"
 
 using namespace std;
 
+#ifndef ORDINAL_LUT
+#define ORDINAL_LUT
 const char *ORDINAL_SUFFIX[] = {
         "st", "nd", "rd", "th"
 };
-
-void clearScreen() {
-    #ifdef _WIN32
-        system("CLS");
-    #elif __linux__
-        system("clear");
-    #elif 	macintosh || Macintosh || __APPLE__ && __MACH__
-        system("clear");
-    #endif
-}
-
-bool inputFail(istream &input) {
-    if (input.fail()) {
-        input.clear();
-        while (input.get() != '\n');
-        clearScreen();
-        return true;
-    }
-    return false;
-}
+#endif //ORDINAL_LUT
 
 void printMatchups(const int group_number) {
     std::mt19937_64 generator(time(nullptr) + 2);
@@ -109,7 +94,7 @@ char *readFromKeyboard() {
 char **createBoard(int N) {
     auto **board = new char *[N];
     for (int i = 0; i < N; ++i) {
-        cout << "[" << i + 1 << "]: ";
+        cout << "[" << setw((int)digits(N)) << setfill('0') << i + 1 << "]: ";
         board[i] = readFromKeyboard();
     }
     return board;

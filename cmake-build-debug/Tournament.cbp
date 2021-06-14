@@ -80,6 +80,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/axaio/CLionProjects/Tournament/auxFunctions.h">
+			<Option target="Tournament"/>
+		</Unit>
 		<Unit filename="C:/Users/axaio/CLionProjects/Tournament/main.cpp">
 			<Option target="Tournament"/>
 		</Unit>

@@ -6,8 +6,14 @@
 
 #IncludeRegexTransform: 
 
+C:/Users/axaio/CLionProjects/Tournament/auxFunctions.h
+iostream
+-
+
 C:/Users/axaio/CLionProjects/Tournament/main.cpp
 iostream
+-
+iomanip
 -
 cstring
 -
@@ -17,4 +23,6 @@ ctime
 -
 algorithm
 -
+auxFunctions.h
+C:/Users/axaio/CLionProjects/Tournament/auxFunctions.h
 
