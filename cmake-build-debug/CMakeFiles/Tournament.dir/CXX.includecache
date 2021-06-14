@@ -9,11 +9,11 @@
 C:/Users/axaio/CLionProjects/Tournament/auxFunctions.h
 iostream
 -
+cstring
+-
 
 C:/Users/axaio/CLionProjects/Tournament/main.cpp
 iostream
--
-iomanip
 -
 cstring
 -

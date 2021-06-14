@@ -1,5 +1,4 @@
 #include <iostream>
-#include <iomanip>
 #include <cstring>
 #include <random>
 #include <ctime>
@@ -92,9 +91,10 @@ char *readFromKeyboard() {
 }
 
 char **createBoard(int N) {
+    unsigned int d = digits(N);
     auto **board = new char *[N];
     for (int i = 0; i < N; ++i) {
-        cout << "[" << setw((int)digits(N)) << setfill('0') << i + 1 << "]: ";
+        cout << "[" <<  i + 1 << "]: " << printSpaces(digits(i + 1), d);
         board[i] = readFromKeyboard();
     }
     return board;
