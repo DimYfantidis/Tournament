@@ -1,5 +1,6 @@
 #ifndef AUX_FUNCTIONS_H
 #define AUX_FUNCTIONS_H
+
 #include <iostream>
 #include <cstring>
 
