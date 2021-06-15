@@ -78,15 +78,15 @@ include CMakeFiles/Tournament.dir/flags.make
 CMakeFiles/Tournament.dir/main.cpp.obj: CMakeFiles/Tournament.dir/flags.make
 CMakeFiles/Tournament.dir/main.cpp.obj: ../main.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\axaio\CLionProjects\Tournament\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Tournament.dir/main.cpp.obj"
-	C:\PROGRA~2\MinGW\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Tournament.dir\main.cpp.obj -c C:\Users\axaio\CLionProjects\Tournament\main.cpp
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Tournament.dir\main.cpp.obj -c C:\Users\axaio\CLionProjects\Tournament\main.cpp
 
 CMakeFiles/Tournament.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Tournament.dir/main.cpp.i"
-	C:\PROGRA~2\MinGW\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\axaio\CLionProjects\Tournament\main.cpp > CMakeFiles\Tournament.dir\main.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\axaio\CLionProjects\Tournament\main.cpp > CMakeFiles\Tournament.dir\main.cpp.i
 
 CMakeFiles/Tournament.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Tournament.dir/main.cpp.s"
-	C:\PROGRA~2\MinGW\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\axaio\CLionProjects\Tournament\main.cpp -o CMakeFiles\Tournament.dir\main.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\axaio\CLionProjects\Tournament\main.cpp -o CMakeFiles\Tournament.dir\main.cpp.s
 
 # Object files for target Tournament
 Tournament_OBJECTS = \
