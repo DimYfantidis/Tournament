@@ -36,7 +36,7 @@ unsigned int digits(int N) {
 }
 
 char *printSpaces(unsigned int d_current, unsigned int d_max) {
-    auto *spaces = new char[100];
+    auto *spaces = new char[25];
     unsigned int i;
     for (i = 0; i < d_max - d_current; ++i) {
         spaces[i] = ' ';
