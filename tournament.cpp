@@ -12,7 +12,7 @@ static const char *ORDINAL_SUFFIX[] = {
 
 void tournament::setBoard() {
     if (!filename.empty()) {
-
+        //Reads players from file: filename
         ifstream inFile;
         inFile.open(filename, ios::in);
 
@@ -31,6 +31,7 @@ void tournament::setBoard() {
         }
 
     } else {
+        //Reads players from keyboard since filename is empty string.
         unsigned int d = digits(num_of_players);
         cout << endl << "Input player names:" << endl;
         for (int i = 0; i < num_of_players; ++i) {
