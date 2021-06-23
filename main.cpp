@@ -74,8 +74,10 @@ int main() {
         cout << "Randomize again? (1: Yes, 0: No): ";
         cin >> shuffle;
     }
+    while (cin.get() != '\n');
 
-    cout << "Press Enter to exit ..." << endl;
+
+    cout << endl << "Press Enter to exit ..." << endl;
     while (cin.get() != '\n');
 
     return 0;
