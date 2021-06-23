@@ -58,6 +58,22 @@ int main() {
     ngv_event.printGroups(cout);
     ngv_event.printMatchups(cout);
 
+    int shuffle;
+    cout << "Randomize again? (1: Yes, 0: No): ";
+    cin >> shuffle;
+
+    while (shuffle) {
+        clearScreen();
+
+        ngv_event.shuffle();
+
+        ngv_event.printBoard(cout);
+        ngv_event.printGroups(cout);
+        ngv_event.printMatchups(cout);
+
+        cout << "Randomize again? (1: Yes, 0: No): ";
+        cin >> shuffle;
+    }
 
     cout << "Press Enter to exit ..." << endl;
     while (cin.get() != '\n');
