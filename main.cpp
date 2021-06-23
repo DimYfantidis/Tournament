@@ -11,7 +11,7 @@ int main() {
     string file;
 
     do {
-        cout << endl << "Input player names:\nFrom keyboard: 0\nFrom file: 1\n\nSELECT: ";
+        cout << "Input player names:\nFrom keyboard: 0\nFrom file: 1\n\nSELECT: ";
         cin >> source;
     } while (inputFail(cin));
 
