@@ -12,12 +12,14 @@ static const char *ORDINAL_SUFFIX[] = {
 
 void tournament::setBoard() {
     if (!filename.empty()) {
-        //Reads players from file: filename
+        int lines = linesInFile(filename);
+        int min = num_of_players < lines ? num_of_players : lines;
+
+        //Reads players from file:
         ifstream inFile;
         inFile.open(filename, ios::in);
-
         if (inFile.is_open()) {
-            for (int i = 0; i < num_of_players; ++i) {
+            for (int i = 0; i < min; ++i) {
                 do {
                     getline(inFile, player_board[i]);
                 } while (player_board[i].empty());

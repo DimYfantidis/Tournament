@@ -2,6 +2,7 @@
 #define AUX_FUNCTIONS_H
 
 #include <iostream>
+#include <fstream>
 #include <cstring>
 
 inline static void clearScreen() {
@@ -47,6 +48,26 @@ inline static char *printSpaces(unsigned int d_current, unsigned int d_max) {
 
     delete[] spaces;
     return result;
+}
+
+inline static int linesInFile(const string &f_name) {
+    int lines = 1;
+    ifstream inFile;
+    inFile.open(f_name, ios::in);
+    if (inFile.is_open()) {
+        while (!inFile.eof()) {
+            if (inFile.get() == '\n') {
+                ++lines;
+            }
+        }
+        inFile.close();
+    } else {
+        cerr << "File Error!" << endl;
+        cout << "Press Enter to exit ..." << endl;
+        while (cin.get() != '\n');
+        exit(-1);
+    }
+    return lines;
 }
 
 #endif //AUX_FUNCTIONS_H
