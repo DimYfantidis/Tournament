@@ -1,12 +1,9 @@
 #include "tournament.h"
 #include "auxFunctions.h"
 
-#ifndef ORDINAL_LUT
-#define ORDINAL_LUT
 static const char *ORDINAL_SUFFIX[] = {
         "st", "nd", "rd", "th"
 };
-#endif //ORDINAL_LUT
 
 // --------------------- PRIVATE ---------------------
 
