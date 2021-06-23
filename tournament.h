@@ -25,6 +25,7 @@ private:
 public:
     tournament(const string &, int);
     tournament(const char *, int);
+    tournament(const tournament &);
     ~tournament();
 
     void set();

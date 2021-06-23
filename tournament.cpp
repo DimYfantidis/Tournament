@@ -92,6 +92,26 @@ tournament::tournament(const char *f_name, int N) {
     active = false;
 }
 
+tournament::tournament(const tournament &prototype) {
+    num_of_players = prototype.num_of_players;
+
+    player_board = new string[prototype.num_of_players];
+    for (int i = 0; i < num_of_players; ++i) {
+        player_board[i] = prototype.player_board[i];
+    }
+    player_pairs = new int[prototype.num_of_players];
+    for (int i = 0; i < num_of_players; ++i) {
+        player_pairs[i] = player_pairs[i];
+    }
+    matchups = new int[prototype.numOfGroups()];
+    for (int i = 0; i < prototype.numOfGroups(); ++i) {
+        matchups[i] = matchups[i];
+    }
+
+    filename = prototype.filename;
+    active = prototype.active;
+}
+
 tournament::~tournament() {
     clear();
 }
@@ -151,6 +171,8 @@ void tournament::clear() {
     player_board = nullptr;
     player_pairs = nullptr;
     matchups = nullptr;
+    active = false;
+    num_of_players = 0;
 }
 
 string * tournament::getBoard() const {
