@@ -177,6 +177,7 @@ void tournament::shuffle() {
 
 void tournament::printBoard(ostream &output) const {
     unsigned int d = digits(num_of_players);
+    cout << endl << "Player Board:" << endl;
     for (int i = 0; i < num_of_players; ++i) {
         output << "[" <<  i + 1 << "]: "
                << printSpaces(digits(i + 1), d)
