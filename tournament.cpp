@@ -93,9 +93,7 @@ tournament::tournament(const char *f_name, int N) {
 }
 
 tournament::~tournament() {
-    delete[] player_board;
-    delete[] player_pairs;
-    delete[] matchups;
+    clear();
 }
 
 bool tournament::isEmpty() {
