@@ -158,7 +158,6 @@ void tournament::reset(const char *f_name, int N) {
     player_pairs = new int[N];
     matchups = new int[N / 2];
     filename = f_name;
-
     active = false;
 }
 
