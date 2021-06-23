@@ -4,4 +4,4 @@ project(Tournament)
 set(CMAKE_CXX_STANDARD 14)
 
 add_executable(Tournament
-        main.cpp auxFunctions.h)
+        main.cpp tournament.cpp tournament.h auxFunctions.h)

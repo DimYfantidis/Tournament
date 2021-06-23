@@ -86,6 +86,12 @@
 		<Unit filename="C:/Users/axaio/CLionProjects/Tournament/main.cpp">
 			<Option target="Tournament"/>
 		</Unit>
+		<Unit filename="C:/Users/axaio/CLionProjects/Tournament/tournament.cpp">
+			<Option target="Tournament"/>
+		</Unit>
+		<Unit filename="C:/Users/axaio/CLionProjects/Tournament/tournament.h">
+			<Option target="Tournament"/>
+		</Unit>
 		<Unit filename="C:/Users/axaio/CLionProjects/Tournament/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

@@ -168,6 +168,33 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Tournament.dir\build.make CMakeFiles/Tournament.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+tournament.obj: tournament.cpp.obj
+
+.PHONY : tournament.obj
+
+# target to build an object file
+tournament.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Tournament.dir\build.make CMakeFiles/Tournament.dir/tournament.cpp.obj
+.PHONY : tournament.cpp.obj
+
+tournament.i: tournament.cpp.i
+
+.PHONY : tournament.i
+
+# target to preprocess a source file
+tournament.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Tournament.dir\build.make CMakeFiles/Tournament.dir/tournament.cpp.i
+.PHONY : tournament.cpp.i
+
+tournament.s: tournament.cpp.s
+
+.PHONY : tournament.s
+
+# target to generate assembly for a file
+tournament.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Tournament.dir\build.make CMakeFiles/Tournament.dir/tournament.cpp.s
+.PHONY : tournament.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -180,6 +207,9 @@ help:
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... tournament.obj
+	@echo ... tournament.i
+	@echo ... tournament.s
 .PHONY : help
 
 

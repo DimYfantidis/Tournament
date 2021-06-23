@@ -4,7 +4,7 @@
 #include <iostream>
 #include <cstring>
 
-void clearScreen() {
+inline static void clearScreen() {
 #ifdef _WIN32
     system("CLS");
 #elif __linux__
@@ -14,7 +14,7 @@ void clearScreen() {
 #endif
 }
 
-bool inputFail(std::istream &input) {
+static bool inputFail(std::istream &input) {
     if (input.fail()) {
         input.clear();
         while (input.get() != '\n');
@@ -24,7 +24,7 @@ bool inputFail(std::istream &input) {
     return false;
 }
 
-unsigned int digits(int N) {
+inline static unsigned int digits(int N) {
     if (N < 0) {
         N *= (-1);
     }
@@ -35,7 +35,7 @@ unsigned int digits(int N) {
     return d;
 }
 
-char *printSpaces(unsigned int d_current, unsigned int d_max) {
+inline static char *printSpaces(unsigned int d_current, unsigned int d_max) {
     auto *spaces = new char[25];
     unsigned int i;
     for (i = 0; i < d_max - d_current; ++i) {

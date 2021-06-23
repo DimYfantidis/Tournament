@@ -3,4 +3,9 @@
 
 CMakeFiles/Tournament.dir/main.cpp.obj: ../auxFunctions.h
 CMakeFiles/Tournament.dir/main.cpp.obj: ../main.cpp
+CMakeFiles/Tournament.dir/main.cpp.obj: ../tournament.h
+
+CMakeFiles/Tournament.dir/tournament.cpp.obj: ../auxFunctions.h
+CMakeFiles/Tournament.dir/tournament.cpp.obj: ../tournament.cpp
+CMakeFiles/Tournament.dir/tournament.cpp.obj: ../tournament.h
 

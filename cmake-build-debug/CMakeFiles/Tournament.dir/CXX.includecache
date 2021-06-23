@@ -15,7 +15,19 @@ cstring
 C:/Users/axaio/CLionProjects/Tournament/main.cpp
 iostream
 -
-cstring
+string
+-
+tournament.h
+C:/Users/axaio/CLionProjects/Tournament/tournament.h
+auxFunctions.h
+C:/Users/axaio/CLionProjects/Tournament/auxFunctions.h
+
+C:/Users/axaio/CLionProjects/Tournament/tournament.cpp
+iostream
+-
+fstream
+-
+string
 -
 random
 -
@@ -25,4 +37,8 @@ algorithm
 -
 auxFunctions.h
 C:/Users/axaio/CLionProjects/Tournament/auxFunctions.h
+tournament.h
+C:/Users/axaio/CLionProjects/Tournament/tournament.h
+
+C:/Users/axaio/CLionProjects/Tournament/tournament.h
 

@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Tournament.dir/main.cpp.obj"
+  "CMakeFiles/Tournament.dir/tournament.cpp.obj"
   "Tournament.exe"
   "Tournament.exe.manifest"
   "Tournament.pdb"
