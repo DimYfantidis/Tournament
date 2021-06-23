@@ -38,6 +38,7 @@ void tournament::setBoard() {
 
     } else {
         unsigned int d = digits(num_of_players);
+        cout << endl << "Input player names:" << endl;
         for (int i = 0; i < num_of_players; ++i) {
             cout << "[" <<  i + 1 << "]: " << printSpaces(digits(i + 1), d);
             do {

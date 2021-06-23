@@ -12,15 +12,23 @@ iostream
 cstring
 -
 
-C:/Users/axaio/CLionProjects/Tournament/main.cpp
+C:/Users/axaio/CLionProjects/Tournament/tournament.cpp
 iostream
+-
+fstream
 -
 string
 -
-tournament.h
-C:/Users/axaio/CLionProjects/Tournament/tournament.h
+random
+-
+ctime
+-
+algorithm
+-
 auxFunctions.h
 C:/Users/axaio/CLionProjects/Tournament/auxFunctions.h
+tournament.h
+C:/Users/axaio/CLionProjects/Tournament/tournament.h
 
 C:/Users/axaio/CLionProjects/Tournament/tournament.h
 
