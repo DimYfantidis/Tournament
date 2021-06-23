@@ -110,7 +110,6 @@ tournament::tournament(const tournament &prototype) {
     for (int i = 0; i < prototype.numOfGroups(); ++i) {
         matchups[i] = matchups[i];
     }
-
     filename = prototype.filename;
     active = prototype.active;
 }
