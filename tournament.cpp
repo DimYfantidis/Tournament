@@ -20,10 +20,7 @@ void tournament::setBoard() {
             }
             inFile.close();
         } else {
-            cerr << "File Error!" << endl;
-            cout << "Press Enter to exit ..." << endl;
-            while (cin.get() != '\n');
-            exit(-1);
+            fileError();
         }
 
     } else {

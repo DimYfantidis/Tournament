@@ -23,6 +23,13 @@ static bool inputFail(std::istream &input) {
     return false;
 }
 
+inline static void fileError() {
+    cerr << "File Error!" << endl;
+    cout << "Press Enter to exit ..." << endl;
+    while (cin.get() != '\n');
+    exit(-1);
+}
+
 inline static unsigned int digits(int N) {
     if (N < 0) {
         N *= (-1);
@@ -63,10 +70,7 @@ inline static int linesInFile(const string &f_name) {
         }
         inFile.close();
     } else {
-        cerr << "File Error!" << endl;
-        cout << "Press Enter to exit ..." << endl;
-        while (cin.get() != '\n');
-        exit(-1);
+        fileError();
     }
     return lines;
 }
