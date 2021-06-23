@@ -15,13 +15,13 @@ int main() {
         cin >> source;
     } while (inputFail(cin));
 
-    while (cin.get() != '\n');
-
     clearScreen();
 
     if (source) {
         cout << "Input file name and directory: ";
-        getline(cin, file);
+        do {
+            getline(cin, file);
+        } while (file.empty());
         clearScreen();
     } else {
         file = "";

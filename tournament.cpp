@@ -75,7 +75,7 @@ void tournament::generateGroups() {
 
 tournament::tournament(const string &f_name, int N) {
     if (!f_name.empty()) {
-        int lines = linesInFile(filename);
+        int lines = linesInFile(f_name);
         num_of_players = lines < N ? lines : N;
     } else {
         num_of_players = N;
