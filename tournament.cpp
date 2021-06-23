@@ -12,14 +12,11 @@ static const char *ORDINAL_SUFFIX[] = {
 
 void tournament::setBoard() {
     if (!filename.empty()) {
-        int lines = linesInFile(filename);
-        int min = num_of_players < lines ? num_of_players : lines;
-
         //Reads players from file:
         ifstream inFile;
         inFile.open(filename, ios::in);
         if (inFile.is_open()) {
-            for (int i = 0; i < min; ++i) {
+            for (int i = 0; i < num_of_players; ++i) {
                 do {
                     getline(inFile, player_board[i]);
                 } while (player_board[i].empty());
@@ -77,19 +74,29 @@ void tournament::generateGroups() {
 // --------------------- PUBLIC ---------------------
 
 tournament::tournament(const string &f_name, int N) {
-    num_of_players = N;
-    player_board = new string[N];
-    player_pairs = new int[N];
-    matchups = new int[N / 2];
+    if (!f_name.empty()) {
+        int lines = linesInFile(filename);
+        num_of_players = lines < N ? lines : N;
+    } else {
+        num_of_players = N;
+    }
+    player_board = new string[num_of_players];
+    player_pairs = new int[num_of_players];
+    matchups = new int[num_of_players / 2];
     filename = f_name;
     active = false;
 }
 
 tournament::tournament(const char *f_name, int N) {
-    num_of_players = N;
-    player_board = new string[N];
-    player_pairs = new int[N];
-    matchups = new int[N / 2];
+    if (strcmp(f_name, "") != 0 || f_name != nullptr) {
+        int lines = linesInFile(filename);
+        num_of_players = lines < N ? lines : N;
+    } else {
+        num_of_players = N;
+    }
+    player_board = new string[num_of_players];
+    player_pairs = new int[num_of_players];
+    matchups = new int[num_of_players / 2];
     filename = f_name;
     active = false;
 }
