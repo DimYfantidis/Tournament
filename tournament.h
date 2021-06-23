@@ -1,6 +1,13 @@
 #ifndef TOURNAMENT_H
 #define TOURNAMENT_H
 
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <random>
+#include <ctime>
+#include <algorithm>
+
 using namespace std;
 
 class tournament {

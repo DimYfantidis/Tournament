@@ -1,11 +1,5 @@
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <random>
-#include <ctime>
-#include <algorithm>
-#include "auxFunctions.h"
 #include "tournament.h"
+#include "auxFunctions.h"
 
 #ifndef ORDINAL_LUT
 #define ORDINAL_LUT
