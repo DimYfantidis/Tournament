@@ -13,12 +13,10 @@ using namespace std;
 class tournament {
 private:
     int num_of_players;
-
     string * player_board;
     int * player_pairs;
     int * matchups;
     string filename;
-
     bool active;
 
     void setBoard();
@@ -32,6 +30,7 @@ public:
     void set();
     void reset(const string &, int);
     void reset(const char *, int);
+    void clear();
 
 
     string * getBoard() const;

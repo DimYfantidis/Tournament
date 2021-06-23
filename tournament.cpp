@@ -144,6 +144,17 @@ void tournament::reset(const char *f_name, int N) {
     active = false;
 }
 
+void tournament::clear() {
+    if (!isEmpty()) {
+        delete[] player_board;
+        delete[] player_pairs;
+        delete[] matchups;
+    }
+    player_board = nullptr;
+    player_pairs = nullptr;
+    matchups = nullptr;
+}
+
 string * tournament::getBoard() const {
     return player_board;
 }
