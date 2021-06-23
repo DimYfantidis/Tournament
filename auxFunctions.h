@@ -50,11 +50,14 @@ inline static char *printSpaces(unsigned int d_current, unsigned int d_max) {
 
 inline static int linesInFile(const string &f_name) {
     int lines = 1;
+    string temp;
+
     ifstream inFile;
     inFile.open(f_name, ios::in);
     if (inFile.is_open()) {
         while (!inFile.eof()) {
-            if (inFile.get() == '\n') {
+            getline(inFile, temp);
+            if (!temp.empty()) {
                 ++lines;
             }
         }
