@@ -13,11 +13,11 @@ using namespace std;
 class tournament {
 private:
     int num_of_players;
+    bool active;
+    string filename;
     string * player_board;
     int * player_pairs;
     int * matchups;
-    string filename;
-    bool active;
 
     void setBoard();
     void generateGroups();
