@@ -24,9 +24,9 @@ static bool inputFail(std::istream &input) {
 }
 
 inline static void fileError() {
-    cerr << "File Error!" << endl;
-    cout << "Press Enter to exit ..." << endl;
-    while (cin.get() != '\n');
+    std::cerr << "File Error!" << std::endl;
+    std::cout << "Press Enter to exit ..." << std::endl;
+    while (std::cin.get() != '\n');
     exit(-1);
 }
 
