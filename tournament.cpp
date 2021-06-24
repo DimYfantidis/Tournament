@@ -9,7 +9,7 @@ static const char *ORDINAL_SUFFIX[] = {
 
 void tournament::setBoard() {
     if (!filename.empty()) {
-        //Reads players from file:
+        //Reads players from file.
         ifstream inFile;
         inFile.open(filename, ios::in);
         if (inFile.is_open()) {
