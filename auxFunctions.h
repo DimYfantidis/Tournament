@@ -55,8 +55,8 @@ inline static char *printSpaces(unsigned int d_current, unsigned int d_max) {
     return result;
 }
 
-inline static int linesInFile(const string &f_name) {
-    int lines = 0;
+inline static int namesInFile(const string &f_name) {
+    int names = 0;
     string temp;
 
     ifstream inFile;
@@ -65,14 +65,14 @@ inline static int linesInFile(const string &f_name) {
         while (!inFile.eof()) {
             getline(inFile, temp);
             if (!temp.empty()) {
-                ++lines;
+                ++names;
             }
         }
         inFile.close();
     } else {
         fileError();
     }
-    return lines;
+    return names;
 }
 
 #endif //AUX_FUNCTIONS_H

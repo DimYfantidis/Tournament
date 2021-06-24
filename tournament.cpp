@@ -68,8 +68,8 @@ void tournament::generateGroups() {
 
 tournament::tournament(const string &f_name, int N) {
     if (!f_name.empty()) {
-        int lines = linesInFile(f_name);
-        num_of_players = lines < N ? lines : N;
+        int names_count = namesInFile(f_name);
+        num_of_players = names_count < N ? names_count : N;
     } else {
         num_of_players = N;
     }
@@ -82,7 +82,7 @@ tournament::tournament(const string &f_name, int N) {
 
 tournament::tournament(const char *f_name, int N) {
     if (strcmp(f_name, "") != 0 || f_name != nullptr) {
-        int lines = linesInFile(filename);
+        int lines = namesInFile(filename);
         num_of_players = lines < N ? lines : N;
     } else {
         num_of_players = N;
