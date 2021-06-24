@@ -56,7 +56,7 @@ inline static char *printSpaces(unsigned int d_current, unsigned int d_max) {
 }
 
 inline static int linesInFile(const string &f_name) {
-    int lines = 1;
+    int lines = 0;
     string temp;
 
     ifstream inFile;
