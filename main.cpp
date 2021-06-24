@@ -22,6 +22,7 @@ int main() {
         do {
             getline(cin, file);
         } while (file.empty());
+
         clearScreen();
     } else {
         file = "";
