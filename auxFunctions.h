@@ -8,7 +8,7 @@
 inline static void clearScreen() {
 #ifdef _WIN32
     system("CLS");
-#elif __linux__ || macintosh || Macintosh || __APPLE__ && __MACH__
+#elif __linux__ || macintosh || Macintosh || (__APPLE__ && __MACH__)
     system("clear");
 #endif
 }
