@@ -22,7 +22,6 @@ void tournament::setBoard() {
         } else {
             fileError();
         }
-
     } else {
         //Reads players from keyboard since filename is empty string.
         unsigned int d = digits(num_of_players);
