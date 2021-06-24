@@ -202,6 +202,9 @@ void tournament::shuffle() {
 }
 
 void tournament::printBoard(ostream &output) const {
+    if (!active) {
+        return;
+    }
     unsigned int d = digits(num_of_players);
     cout << endl << "Player Board:" << endl;
     for (int i = 0; i < num_of_players; ++i) {
@@ -212,6 +215,9 @@ void tournament::printBoard(ostream &output) const {
 }
 
 void tournament::printGroups(ostream &output) const {
+    if (!active) {
+        return;
+    }
     output << endl;
     for (int i = 0; i < numOfGroups(); ++i) {
         output << i + 1 << (i < 4 ? ORDINAL_SUFFIX[i] : ORDINAL_SUFFIX[3]) << " Group" << endl
@@ -223,6 +229,9 @@ void tournament::printGroups(ostream &output) const {
 }
 
 void tournament::printMatchups(ostream &output) const {
+    if (!active) {
+        return;
+    }
     int g1, g2;
     int group_pairs = numOfGroups() / 2;
 
