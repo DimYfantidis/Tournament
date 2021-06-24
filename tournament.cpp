@@ -188,7 +188,7 @@ int tournament::numOfGroups() const {
 }
 
 void tournament::shuffle() {
-    if (isEmpty()) {
+    if (isEmpty() || !active) {
         return;
     }
     delete[] player_pairs;
