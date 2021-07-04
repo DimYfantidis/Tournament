@@ -218,9 +218,17 @@ void tournament::printGroups(ostream &output) const {
     if (!active) {
         return;
     }
+    int temp;
+    int i;
+    bool is_between_eleven_and_thirteen;
+
     output << endl;
-    for (int i = 0; i < numOfGroups(); ++i) {
-        output << i + 1 << (i < 4 ? ORDINAL_SUFFIX[i] : ORDINAL_SUFFIX[3]) << " Group" << endl
+    for (i = 0; i < numOfGroups(); ++i) {
+        //Temp is required as writing i % 10 directly inside the ternary operator crashes std::cout for some reason.
+        temp = i % 10;
+        //Ordinal expressions for 11, 12, 13 are 11th, 12th, 13th and NOT 11st, 12nd, 13rd.
+        is_between_eleven_and_thirteen = ((i + 1) >= 11 && (i + 1) <= 13);
+        output << i + 1 << (temp < 4 && !is_between_eleven_and_thirteen ? ORDINAL_SUFFIX[temp] : ORDINAL_SUFFIX[3]) << " Group" << endl
              << "- " << player_board[player_pairs[2 * i]] << endl
              << "- " << player_board[player_pairs[2 * i + 1]] << endl
              << endl;
@@ -235,12 +243,22 @@ void tournament::printMatchups(ostream &output) const {
     int g1, g2;
     int group_pairs = numOfGroups() / 2;
 
+    int i;
+    int temp[2];
+    bool is_between_eleven_and_thirteen[2];
+
     cout << "MATCHUPS: " << endl;
-    for (int i = 0; i < group_pairs; ++i) {
+    for (i = 0; i < group_pairs; ++i) {
         g1 = matchups[2 * i];
         g2 = matchups[2 * i + 1];
-        cout << g1 << (g1 < 5 ? ORDINAL_SUFFIX[g1 - 1] : ORDINAL_SUFFIX[3]) << " VS "
-             << g2 << (g2 < 5 ? ORDINAL_SUFFIX[g2 - 1] : ORDINAL_SUFFIX[3]) << endl;
+
+        temp[0] = (g1 - 1) % 10;
+        temp[1] = (g2 - 1) % 10;
+        is_between_eleven_and_thirteen[0] = (g1 >= 11 && g1 <= 13);
+        is_between_eleven_and_thirteen[1] = (g2 >= 11 && g2 <= 13);
+
+        cout << g1 << (temp[0] < 4 && !is_between_eleven_and_thirteen[0] ? ORDINAL_SUFFIX[temp[0] - 1] : ORDINAL_SUFFIX[3]) << " VS "
+             << g2 << (temp[1] < 4 && !is_between_eleven_and_thirteen[1] ? ORDINAL_SUFFIX[temp[1] - 1] : ORDINAL_SUFFIX[3]) << endl;
     }
     if (numOfGroups() % 2) {
         int left_out = matchups[numOfGroups() - 1];

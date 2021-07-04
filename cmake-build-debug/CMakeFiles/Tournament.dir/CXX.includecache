@@ -14,11 +14,7 @@ fstream
 cstring
 -
 
-C:/Users/axaio/CLionProjects/Tournament/main.cpp
-iostream
--
-string
--
+C:/Users/axaio/CLionProjects/Tournament/tournament.cpp
 tournament.h
 C:/Users/axaio/CLionProjects/Tournament/tournament.h
 auxFunctions.h
