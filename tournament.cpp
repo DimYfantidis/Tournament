@@ -262,7 +262,11 @@ void tournament::printMatchups(ostream &output) const {
     }
     if (numOfGroups() % 2) {
         int left_out = matchups[numOfGroups() - 1];
-        cout << "(" << left_out << (left_out < 5 ? ORDINAL_SUFFIX[left_out - 1] : ORDINAL_SUFFIX[3])
+
+        temp[0] = (left_out - 1) % 10;
+        is_between_eleven_and_thirteen[0] = (left_out >= 11 && left_out <= 13);
+
+        cout << "(" << left_out << (temp[0] < 4 && !is_between_eleven_and_thirteen[0] ? ORDINAL_SUFFIX[temp[0]] : ORDINAL_SUFFIX[3])
              << " group qualifies to the next round)" << endl;
     }
     cout << endl;
