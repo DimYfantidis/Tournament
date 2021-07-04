@@ -257,8 +257,8 @@ void tournament::printMatchups(ostream &output) const {
         is_between_eleven_and_thirteen[0] = (g1 >= 11 && g1 <= 13);
         is_between_eleven_and_thirteen[1] = (g2 >= 11 && g2 <= 13);
 
-        cout << g1 << (temp[0] < 4 && !is_between_eleven_and_thirteen[0] ? ORDINAL_SUFFIX[temp[0] - 1] : ORDINAL_SUFFIX[3]) << " VS "
-             << g2 << (temp[1] < 4 && !is_between_eleven_and_thirteen[1] ? ORDINAL_SUFFIX[temp[1] - 1] : ORDINAL_SUFFIX[3]) << endl;
+        cout << g1 << (temp[0] < 4 && !is_between_eleven_and_thirteen[0] ? ORDINAL_SUFFIX[temp[0]] : ORDINAL_SUFFIX[3]) << " VS "
+             << g2 << (temp[1] < 4 && !is_between_eleven_and_thirteen[1] ? ORDINAL_SUFFIX[temp[1]] : ORDINAL_SUFFIX[3]) << endl;
     }
     if (numOfGroups() % 2) {
         int left_out = matchups[numOfGroups() - 1];
